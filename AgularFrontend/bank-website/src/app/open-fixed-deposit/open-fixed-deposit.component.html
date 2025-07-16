@@ -1,0 +1,76 @@
+<!-- src/app/open-fixed-deposit/open-fixed-deposit.component.html -->
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-info text-white d-flex align-items-center">
+      <h4 class="mb-0">Open Fixed Deposit</h4>
+      <button
+        class="btn btn-secondary btn-sm ms-auto"
+        [routerLink]="['/list-fds']"
+      >
+        Show All FDs
+      </button>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="openFD()" #fdForm="ngForm">
+        <div class="mb-3">
+          <label for="accountNo" class="form-label">Account Number</label>
+          <input
+            type="text"
+            id="accountNo"
+            class="form-control"
+            [(ngModel)]="fdData.accountNo"
+            name="accountNo"
+            readonly
+          />
+        </div>
+        <div class="mb-3">
+          <label for="principalAmount" class="form-label">Principal Amount</label>
+          <input
+            type="number"
+            id="principalAmount"
+            class="form-control"
+            [(ngModel)]="fdData.principalAmount"
+            name="principalAmount"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="durationMonths" class="form-label">Duration (Months)</label>
+          <input
+            type="number"
+            id="durationMonths"
+            class="form-control"
+            [(ngModel)]="fdData.durationMonths"
+            name="durationMonths"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="interestRate" class="form-label">Interest Rate</label>
+          <select
+            id="interestRate"
+            class="form-select"
+            [(ngModel)]="fdData.interestRate"
+            name="interestRate"
+            required
+          >
+            <option [ngValue]="5.5">5.5%</option>
+            <option [ngValue]="7.5">7.5%</option>
+            <option [ngValue]="8.45">8.45%</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-info w-100"
+          [disabled]="fdForm.invalid"
+        >
+          Open FD
+        </button>
+      </form>
+      <a routerLink="/welcome" class="btn btn-outline-info mt-3 w-100">
+        Piche Jao to Dashboard ..!
+      </a>
+    </div>
+  </div>
+</div>

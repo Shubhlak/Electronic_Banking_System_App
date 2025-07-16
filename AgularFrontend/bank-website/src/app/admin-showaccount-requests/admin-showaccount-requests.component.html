@@ -1,0 +1,34 @@
+<!-- src/app/admin-showaccount-requests/admin-showaccount-requests.component.html -->
+<div class="table-container">
+    <h2>Account Requests</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Account ID</th>
+          <th>User ID</th>
+          <th>Balance</th>
+          <th>IFSC Code</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accountRequests">
+          <td>{{ account.accountNo }}</td>
+          <td>{{ account.userId }}</td>
+          <td>{{ account.balance }}</td>
+          <td>{{ account.bankIFSC }}</td>
+          <td>{{ account.status }}</td>
+          <td class="action-buttons">
+            <button class="btn btn-success btn-sm" (click)="updateStatus(account.accountNo, 'ACTIVE')">
+              ✅ Approve
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="updateStatus(account.accountNo, 'REJECTED')">
+              ❌ Reject
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

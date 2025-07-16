@@ -1,0 +1,29 @@
+<!-- src/app/add-beneficiary/add-beneficiary.component.html -->
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h4>Add Beneficiary</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="addBeneficiary()" #beneficiaryForm="ngForm">
+        <!-- User Account Number (pre-populated, read-only) -->
+        <div class="mb-3">
+          <label for="userAccountNo" class="form-label">Your Account Number</label>
+          <input type="text" id="userAccountNo" class="form-control" [(ngModel)]="beneficiary.userAccountNo" name="userAccountNo" readonly required>
+        </div>
+        <!-- Beneficiary Account Number -->
+        <div class="mb-3">
+          <label for="beneficiaryAccountNo" class="form-label">Beneficiary Account Number</label>
+          <input type="text" id="beneficiaryAccountNo" class="form-control" [(ngModel)]="beneficiary.beneficiaryAccountNo" name="beneficiaryAccountNo" required>
+        </div>
+        <!-- Beneficiary Nickname -->
+        <div class="mb-3">
+          <label for="nickname" class="form-label">Beneficiary Nickname</label>
+          <input type="text" id="nickname" class="form-control" [(ngModel)]="beneficiary.nickname" name="nickname" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="beneficiaryForm.invalid">Add Beneficiary</button>
+      </form>
+      <a routerLink="/welcome" class="btn btn-outline-primary mt-3 w-100">Back to Dashboard</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<!-- src/app/login/login.component.html -->
+
+
+<div class="container mt-5">
+  <div class="card mx-auto" style="max-width: 400px;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Login</h2>
+      <form (ngSubmit)="login()">
+        <div class="mb-3">
+          <label for="username" class="form-label">User ID</label>
+          <input type="text" id="username" class="form-control" placeholder="Enter User ID" [(ngModel)]="username" name="username" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+    </div>
+  </div>
+</div>

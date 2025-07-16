@@ -1,0 +1,29 @@
+<div class="container my-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4>Edit Profile</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input id="fname" type="text" class="form-control" formControlName="fname">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input id="lname" type="text" class="form-control" formControlName="lname">
+          </div>
+          <div class="form-group">
+            <label for="phoneno">Phone Number</label>
+            <input id="phoneno" type="text" class="form-control" formControlName="phoneno">
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+            {{ errorMessage }}
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Save</button>
+          <a routerLink="/profile" class="btn btn-secondary mt-3 ml-2">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  

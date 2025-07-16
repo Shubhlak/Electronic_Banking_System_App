@@ -1,0 +1,13 @@
+<div class="container my-4">
+    <div class="card text-center">
+      <div class="card-header bg-success text-white">
+        <h4>Account Balance</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="display-4">$ {{ balance | number:'1.2-2' }}</h2>
+        <p class="card-text">This is your current bank balance.</p>
+        <a routerLink="/welcome" class="btn btn-outline-success mt-3">Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+  

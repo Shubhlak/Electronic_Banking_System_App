@@ -1,0 +1,35 @@
+<!-- src/app/fund-transfer/fund-transfer.component.html -->
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-danger text-white">
+      <h4>Fund Transfer</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="transferFunds()" #transferForm="ngForm">
+        <!-- Sender Account No. (pre-populated, read-only) -->
+        <div class="mb-3">
+          <label for="senderAccount" class="form-label">Sender Account No.</label>
+          <input type="text" id="senderAccount" class="form-control" [(ngModel)]="transferData.senderAccount" name="senderAccount" readonly required>
+        </div>
+        <!-- Receiver Account No. -->
+        <div class="mb-3">
+          <label for="receiverAccount" class="form-label">Receiver Account No.</label>
+          <input type="text" id="receiverAccount" class="form-control" [(ngModel)]="transferData.receiverAccount" name="receiverAccount" required>
+        </div>
+        <!-- Amount -->
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount</label>
+          <input type="number" id="amount" class="form-control" [(ngModel)]="transferData.amount" name="amount" required>
+        </div>
+        <!-- UPI PIN -->
+        <div class="mb-3">
+          <label for="upiPin" class="form-label">UPI PIN</label>
+          <input type="password" id="upiPin" class="form-control" [(ngModel)]="transferData.upiPin" name="upiPin" required>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-danger w-100" [disabled]="transferForm.invalid">Transfer Funds</button>
+      </form>
+      <a routerLink="/welcome" class="btn btn-outline-danger mt-3 w-100">Back to Dashboard</a>
+    </div>
+  </div>
+</div>

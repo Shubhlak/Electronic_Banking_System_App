@@ -1,0 +1,40 @@
+<div class="container my-4">
+  <div class="card">
+    <!-- Card header with title and Edit button -->
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">Your Profile</h4>
+      <a routerLink="/edit-profile" class="btn btn-light btn-sm">Edit</a>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>User Name:</strong> {{ profile.userName }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Phone Number:</strong> {{ profile.phone }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Aadhar Card No:</strong> {{ profile.adharCardNo }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Account No:</strong> {{ profile.accountNo }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Account Type:</strong> {{ profile.accountType }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Bank IFSC:</strong> {{ profile.bankIFSC }}</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Phone Number:</strong> {{ profile.phone }}</p>
+        <a routerLink="/edit-upi-pin" class="btn btn-warning btn-sm">Edit UPI PIN</a>
+      </div>
+      <a routerLink="/welcome" class="btn btn-outline-primary mt-3">Back to Dashboard</a>
+    </div>
+  </div>
+</div>

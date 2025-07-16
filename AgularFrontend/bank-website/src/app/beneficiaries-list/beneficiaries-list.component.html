@@ -1,0 +1,21 @@
+<!-- src/app/beneficiaries-list/beneficiaries-list.component.html -->
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-info text-white">
+      <h4>Beneficiaries List</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-group" *ngIf="beneficiaries && beneficiaries.length; else noData">
+        <li class="list-group-item" *ngFor="let beneficiary of beneficiaries">
+          <h5>{{ beneficiary.nickname }}</h5>
+          <p>Beneficiary Account No: {{ beneficiary.beneficiaryAccountNo }}</p>
+          <p>User Account No: {{ beneficiary.userAccountNo }}</p>
+        </li>
+      </ul>
+      <ng-template #noData>
+        <p>No beneficiaries found.</p>
+      </ng-template>
+      <a routerLink="/welcome" class="btn btn-outline-info mt-3 w-100">Back to Dashboard</a>
+    </div>
+  </div>
+</div>

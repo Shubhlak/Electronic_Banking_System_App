@@ -1,0 +1,28 @@
+<!-- src/app/debit-card-details/debit-card-details.component.html -->
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-warning text-dark">
+      <h4>Debit Card Details</h4>
+    </div>
+    <div class="card-body">
+      <div *ngIf="cardDetails; else noCardIssued">
+        <!-- Red & Yellow themed card -->
+        <div class="card bg-danger text-warning mb-3" style="max-width: 22rem; margin: auto;">
+          <div class="card-header">Debit Card</div>
+          <div class="card-body">
+            <!-- MATCH THE BACKEND FIELDS EXACTLY: 'debitCardNo', 'expiryDate', 'cvv', 'status' -->
+            <h5 class="card-title">Card Number: {{ cardDetails.debitCardNo }}</h5>
+            <p class="card-text">Expiry Date: {{ cardDetails.expiryDate }}</p>
+            <p class="card-text">CVV: {{ cardDetails.cvv }}</p>
+            <p class="card-text">Status: {{ cardDetails.status }}</p>
+          </div>
+        </div>
+      </div>
+      <ng-template #noCardIssued>
+        <p>No card issued for your account.</p>
+        <button class="btn btn-primary" (click)="issueDebitCard()">Issue a Debit Card</button>
+      </ng-template>
+      <a routerLink="/welcome" class="btn btn-outline-warning mt-3 w-100">Back to Dashboard</a>
+    </div>
+  </div>
+</div>

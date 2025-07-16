@@ -1,0 +1,39 @@
+<!-- src/app/list-fixed-deposits/list-fixed-deposits.component.html -->
+<div class="container my-4">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h4>Your Fixed Deposits</h4>
+      </div>
+      <div class="card-body">
+        <!-- If no FD found, show a message. Otherwise, display them in card view. -->
+        <div *ngIf="fixedDeposits && fixedDeposits.length > 0; else noFds">
+          <div class="row">
+            <div class="col-md-4 mb-3" *ngFor="let fd of fixedDeposits">
+              <div class="card">
+                <div class="card-body">
+                  <!-- CHANGED: Display fd.id, not fd.fdId -->
+                  <h5 class="card-title">FD ID: {{ fd.id }}</h5>
+                  <p class="card-text">Principal: {{ fd.principalAmount }}</p>
+                  <p class="card-text">Duration: {{ fd.durationMonths }} months</p>
+                  <p class="card-text">Interest: {{ fd.interestRate }}%</p>
+                  <p class="card-text">Opened On: {{ fd.startDate }}</p>
+                  <p class="card-text">Maturity On: {{ fd.maturityDate }}</p>
+                  <!-- Close FD button: pass fd.id -->
+                  <button class="btn btn-danger" (click)="confirmClose(fd.id)">
+                    Close FD
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #noFds>
+          <p>No fixed deposits found.</p>
+        </ng-template>
+        <a routerLink="/welcome" class="btn btn-outline-success mt-3 w-100">
+          Back to Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+  

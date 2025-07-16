@@ -1,0 +1,66 @@
+<!-- src/app/register/register.component.html -->
+
+<div class="container mt-5">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Create an Account</h2>
+      <form (ngSubmit)="register()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" id="fname" class="form-control" [(ngModel)]="fname" name="fname" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" id="lname" class="form-control" [(ngModel)]="lname" name="lname" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" id="phone" class="form-control" [(ngModel)]="phoneno" name="phoneno" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="aadhar" class="form-label">Aadhar Card No</label>
+            <input type="text" id="aadhar" class="form-control" [(ngModel)]="adhar_card_no" name="adhar_card_no" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="bank_ifsc" class="form-label">Bank IFSC Code</label>
+            <input type="text" id="bank_ifsc" class="form-control" [(ngModel)]="bankIFSC" name="bankIFSC" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="balance" class="form-label">Balance</label>
+            <input type="number" id="balance" class="form-control" [(ngModel)]="balance" name="balance" placeholder="0.00" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="userId" class="form-label">Set User ID</label>
+            <input type="text" id="userId" class="form-control" [(ngModel)]="userId" name="userId" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="password" class="form-label">Set Password</label>
+            <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="upiPin" class="form-label">Set UPI PIN</label>
+            <input type="password" id="upiPin" class="form-control" [(ngModel)]="upiPin" name="upiPin" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="confirmUpiPin" class="form-label">Confirm UPI PIN</label>
+            <input type="password" id="confirmUpiPin" class="form-control" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Create Account</button>
+      </form>
+      <div class="mt-3 text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+      <div class="mt-3 text-success" *ngIf="successMessage">{{ successMessage }}</div>
+    </div>
+  </div>
+</div>
+
+
